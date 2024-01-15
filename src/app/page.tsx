@@ -1,10 +1,11 @@
-import Navigation from "./navigation"
+import Header from "./components/header"
 
 export default function Page() {
   return (
     <>
-      <Navigation />
-      <h1>Hello, Next.js!</h1>
+      <Header />
+      <br />
+      <h1 className="ml-5">Hello, Next.js!</h1>
     </>
   )
 }
