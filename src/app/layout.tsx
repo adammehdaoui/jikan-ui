@@ -2,7 +2,7 @@ import React from "react"
 import "./globals.css"
 import { Lato } from "next/font/google"
 
-const lato = Lato({subsets: ["latin"], weight: ["400"]})
+const lato = Lato({subsets: ["latin"], weight: ["300"]})
 
 export default function RootLayout({
   children,
