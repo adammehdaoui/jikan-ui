@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "./components/header"
+import Header from "../components/header"
 import "./globals.css"
 import { Lato } from "next/font/google"
 
