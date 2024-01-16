@@ -1,8 +1,7 @@
 export default function Page() {
   return (
     <>
-      <br />
-      <h1 className="ml-5">Hello, Next.js!</h1>
+      <h1 className="ml-5 mt-5">Hello, jikan!</h1>
     </>
   )
 }

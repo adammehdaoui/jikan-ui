@@ -10,22 +10,17 @@ export default function Header() {
         </Link>
         <div className="flex mt-3 text-lg text-heaven-white">
           <div className="ml-5">
-            <Link href="/main">
-              Main
-            </Link>
-          </div>
-          <div className="ml-5">
-            <Link href="/main">
+            <Link href="/top">
               Top
             </Link>
           </div>
           <div className="ml-5">
-            <Link href="/main">
+            <Link href="/schedules">
               Schedules
             </Link>
           </div>
           <div className="ml-5">
-            <Link href="/main">
+            <Link href="/about">
               About
             </Link>
           </div>

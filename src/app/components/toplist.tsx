@@ -8,7 +8,7 @@ export default function TopList() {
   const [data, setData] = useState<AnimeData[]>([])
 
   function top() {
-    fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=2", { method: "GET" })
+    fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=10", { method: "GET" })
       .then(res => res.json())
       .then(res => {
         setData(res.data)
@@ -20,17 +20,18 @@ export default function TopList() {
   }, [])
 
   return (
-    <div className="ml-5 flex flex-row">
+    <div className="ml-5">
       {data.map(item => (
-        <span key={item.mal_id}>
-          {item.mal_id}
+        <div className="italic mt-10 w-full" key={item.mal_id}>
+          {item.title}
           <Image
-           src={item.images.jpg.small_image_url}
-           width={50}
-           height={50}
-           alt="anime"
+           src={item.images.jpg.large_image_url}
+           width={1920}
+           height={1080}
+           alt={`image of ${item.title}`}
+           className="mt-5 w-1/6"
           />
-        </span>
+        </div>
       ))}
     </div>
   )
