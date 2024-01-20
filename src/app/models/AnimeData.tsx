@@ -1,3 +1,5 @@
+import TitleData from "./TitleData"
+
 export default interface AnimeData {
   mal_id: number;
   images: {
@@ -7,5 +9,6 @@ export default interface AnimeData {
       large_image_url: string;
     };
   };
+  titles: Array<TitleData>;
   title: string;
 }
