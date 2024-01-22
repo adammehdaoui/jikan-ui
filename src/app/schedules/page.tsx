@@ -1,6 +1,6 @@
 import { Suspense } from "react"
-import Loading from "./loading"
-import SchedulesList from "../../components/schedulesList"
+import Loading from "@/schedules/loading"
+import SchedulesList from "@/components/schedulesList"
 
 export default function Page() {
   return (

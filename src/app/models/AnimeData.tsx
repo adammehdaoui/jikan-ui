@@ -1,4 +1,4 @@
-import TitleData from "./TitleData"
+import TitleData from "@/models/TitleData"
 
 export default interface AnimeData {
   mal_id: number;

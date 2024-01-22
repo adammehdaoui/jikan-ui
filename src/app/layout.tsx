@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../components/layout/header"
-import "./globals.css"
+import Header from "@/components/layout/header"
+import "@/globals.css"
 import { Lato } from "next/font/google"
 import { Metadata } from "next"
 
