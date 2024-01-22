@@ -1,11 +1,12 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import AnimeData from "../app/models/AnimeData"
 import Image from "next/image"  
 
 export default function TopList() {
   const [data, setData] = useState<AnimeData[]>([])
+  const [search, setSearch] = useState<string>("")
 
   const top = useCallback(() => {
     fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=10", { method: "GET" })
@@ -15,13 +16,27 @@ export default function TopList() {
       })
   }, [])
 
+  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value)
+  }, [])
+
   useEffect(() => {
     top()
   }, [top])
 
   return (
     <div className="ml-5">
-      {data.map(item => (
+
+      <input 
+        type="text" 
+        placeholder="Search in top"
+        className="border-2 border-heaven-blue rounded-md mt-8 p-2" 
+        value={search} 
+        onChange={e => handleSearch(e)} 
+      />
+
+      {data?.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+        .map(item => (
         <div className="italic mt-10 w-full" key={item.mal_id}>
           <h2 className="text-lg font-extrabold">{item.title} : {item.titles.find(item => item.type === "Japanese")?.title}</h2>
           <Image
@@ -33,6 +48,7 @@ export default function TopList() {
           />
         </div>
       ))}
+
     </div>
   )
 }

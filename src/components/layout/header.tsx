@@ -3,8 +3,8 @@ import Brand from "../../components/brand/brand"
 
 export default function Header() {
   return (
-    <div className="flex bg-heaven-blue pb-2">
-      <div className="flex flex-wrap sm:ml-20">
+    <header className="flex bg-heaven-blue pb-2">
+      <div className="flex flex-wrap ml-5 sm:ml-20">
         <Link href="/">
           <Brand />
         </Link>
@@ -26,6 +26,6 @@ export default function Header() {
           </div>
         </div> 
       </div>
-    </div>
+    </header>
   )
 }
