@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "@/components/layout/header"
+import Footer from "@/components/layout/footer"
 import "@/globals.css"
 import { Lato } from "next/font/google"
 import { Metadata } from "next"
@@ -20,7 +21,10 @@ export default function RootLayout({
     <html lang="fr" className={lato.className}>
       <body>
         <Header />
-        {children}
+        <div>
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   )

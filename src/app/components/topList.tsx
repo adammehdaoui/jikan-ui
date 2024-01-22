@@ -8,8 +8,8 @@ export default function TopList() {
   const [data, setData] = useState<AnimeData[]>([])
   const [search, setSearch] = useState<string>("")
 
-  const top = useCallback(() => {
-    fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&limit=10", { method: "GET" })
+  const top = useCallback(async () => {
+    await fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&filter=airing&limit=10", { method: "GET" })
       .then(res => res.json())
       .then(res => {
         setData(res.data)
@@ -26,11 +26,10 @@ export default function TopList() {
 
   return (
     <div className="ml-5">
-
       <input 
         type="text" 
         placeholder="Search in top"
-        className="border-2 border-heaven-blue rounded-md mt-8 p-2" 
+        className="border-2 border-heaven-blue rounded-md mt-24 p-2" 
         value={search} 
         onChange={e => handleSearch(e)} 
       />
@@ -38,7 +37,9 @@ export default function TopList() {
       {data?.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
         .map(item => (
         <div className="italic mt-10 w-full" key={item.mal_id}>
-          <h2 className="text-lg font-extrabold">{item.title} : {item.titles.find(item => item.type === "Japanese")?.title}</h2>
+          <h2 className="text-lg font-extrabold">{item.title}</h2>
+          <h3 className="text-md font-bold">Japanese : {item.titles.find(item => item.type === "Japanese")?.title}</h3>
+          <a href={item.url} className="text-heaven-blue">MyAnimeList details</a>
           <Image
            src={item.images.jpg.large_image_url}
            width={1920}
