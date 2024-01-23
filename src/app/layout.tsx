@@ -1,6 +1,8 @@
-import React from "react"
+import React, { Suspense } from "react"
+import { Toaster } from "sonner"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
+import Loading from "@/components/UI/loading"
 import "@/globals.css"
 import { Lato } from "next/font/google"
 import { Metadata } from "next"
@@ -21,9 +23,10 @@ export default function RootLayout({
     <html lang="fr" className={lato.className}>
       <body>
         <Header />
-        <div>
+        <Suspense fallback={<Loading />}>
           {children}
-        </div>
+          <Toaster richColors closeButton position="top-right"/>
+        </Suspense>
         <Footer />
       </body>
     </html>
