@@ -7,10 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.myanimelist.net",
         port: "",
-        pathname: "/images/**"
-      }
-    ]
-  }
+        pathname: "/images/**",
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

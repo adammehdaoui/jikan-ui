@@ -1,3 +1,1 @@
-export default function Element() {
-  
-}
+export default function Element() {}

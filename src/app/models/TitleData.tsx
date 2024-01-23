@@ -1,4 +1,4 @@
 export default interface TitleData {
-  type: string;
-  title: string;
+  type: string
+  title: string
 }

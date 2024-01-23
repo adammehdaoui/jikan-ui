@@ -1,17 +1,17 @@
-import React, { Suspense } from "react"
-import { Toaster } from "sonner"
-import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import Loading from "@/components/UI/loading"
+import Header from "@/components/layout/header"
 import "@/globals.css"
-import { Lato } from "next/font/google"
 import { Metadata } from "next"
+import { Lato } from "next/font/google"
+import React from "react"
+import { Toaster } from "sonner"
 
-const lato = Lato({subsets: ["latin"], weight: ["400"]})
+const lato = Lato({ subsets: ["latin"], weight: ["400"] })
 
 export const metadata: Metadata = {
   title: "JikanUI",
-  description: "JikanUI is a web interface for Jikan, the unofficial MyAnimeList API.",
+  description:
+    "JikanUI is a web interface for Jikan, the unofficial MyAnimeList API.",
 }
 
 export default function RootLayout({
@@ -23,10 +23,8 @@ export default function RootLayout({
     <html lang="fr" className={lato.className}>
       <body>
         <Header />
-        <Suspense fallback={<Loading />}>
-          {children}
-          <Toaster richColors closeButton position="top-right"/>
-        </Suspense>
+        {children}
+        <Toaster richColors closeButton position="top-right" />
         <Footer />
       </body>
     </html>

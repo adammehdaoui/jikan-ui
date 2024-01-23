@@ -2,11 +2,11 @@
   "root": true,
   "extends": [
     "eslint:recommended",
-    "prettier",
     "next",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["prettier", "react", "react-hooks"],
   "env": {
     "es2022": true,
     "node": true
