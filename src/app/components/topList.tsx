@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react"
 import { toast } from "sonner"
+import Top from "@/api/top"
 import AnimeData from "@/models/AnimeData"
 import Image from "next/image"  
 
@@ -9,21 +10,22 @@ export default function TopList() {
   const [data, setData] = useState<AnimeData[]>([])
   const [search, setSearch] = useState<string>("")
 
-  const top = useCallback(async () => {
-    await fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity&filter=airing&limit=10", { method: "GET" })
-      .then(res => res.json())
-      .then(res => {
-        res.data ? setData(res.data) : toast.error("Too many calls to Jikan API, please wait a few seconds and refresh the page.")
-      })
-  }, [])
-
   const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
   }, [])
 
+  const fetchData = useCallback(async () => {
+    try {
+      const data = await Top()
+      setData(data)
+    } catch (error) {
+      toast.error("Too many calls to Jikan API, please wait a few seconds and refresh the page.")
+    }
+  }, [])
+
   useEffect(() => {
-    top()
-  }, [top])
+    fetchData()
+  }, [fetchData])
 
   return (
     <div className="ml-20">
@@ -35,10 +37,10 @@ export default function TopList() {
         onChange={e => handleSearch(e)} 
       />
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap w-full">
         {data?.filter(item  => item.title.toLowerCase().includes(search.toLowerCase()))
           .map(item => (
-          <div className="italic mt-10 w-full" key={item.mal_id}>
+          <div className="italic mt-16 w-1/2" key={item.mal_id}>
             <h2 className="text-lg font-extrabold">{item.title}</h2>
             <h3 className="text-md font-bold">Japanese : {item.titles.find(item => item.type === "Japanese")?.title}</h3>
             <a href={item.url} className="text-heaven-blue">MyAnimeList details</a>
@@ -47,7 +49,7 @@ export default function TopList() {
             width={1920}
             height={1080}
             alt={`image of ${item.title}`}
-            className="mt-5 w-1/6"
+            className="mt-5 w-1/3"
             />
           </div>
         ))}
