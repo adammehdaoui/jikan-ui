@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-          <TopList />
+        <TopList />
       </Suspense>
     </>
   )
