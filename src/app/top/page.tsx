@@ -1,5 +1,5 @@
 import TopList from "@/components/topList"
-import Loading from "@/components/UI/loading"
+import Loading from "@/schedules/loading"
 import { Suspense } from "react"
 
 export default function Page() {
