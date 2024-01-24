@@ -12,4 +12,7 @@ export default interface AnimeData {
   }
   titles: Array<TitleData>
   title: string
+  broadcast: {
+    string: string
+  }
 }

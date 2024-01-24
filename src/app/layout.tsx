@@ -23,8 +23,8 @@ export default function RootLayout({
     <html lang="fr" className={lato.className}>
       <body>
         <Header />
-        {children}
-        <Toaster richColors closeButton position="top-right" />
+        <div>{children}</div>
+        <Toaster richColors position="bottom-right" />
         <Footer />
       </body>
     </html>

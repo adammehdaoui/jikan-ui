@@ -26,6 +26,10 @@ export default function TopList() {
   }, [])
 
   useEffect(() => {
+    toast.info("Top page ranks animes by popularity")
+  }, [])
+
+  useEffect(() => {
     fetchData()
   }, [fetchData])
 
@@ -59,7 +63,7 @@ export default function TopList() {
                 width={1920}
                 height={1080}
                 alt={`image of ${item.title}`}
-                className="mt-5 w-1/3 shadow-2xl"
+                className="mt-5 w-11/12 shadow-2xl"
               />
             </div>
           ))}
