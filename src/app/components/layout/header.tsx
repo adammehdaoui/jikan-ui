@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Header() {
   return (
     <header className="flex fixed w-full bg-heaven-blue pb-2">
-      <div className="flex flex-wrap ml-5 sm:ml-20">
+      <div className="flex flex-wrap ml-3 sm:ml-20">
         <Link href="/">
           <Brand />
         </Link>

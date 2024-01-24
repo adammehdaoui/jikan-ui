@@ -30,11 +30,11 @@ export default function TopList() {
   }, [fetchData])
 
   return (
-    <div className="ml-20">
+    <div className="ml-5 sm:ml-20">
       <input
         type="text"
         placeholder="Search in top"
-        className="border-2 border-heaven-blue rounded-md mt-24 p-2"
+        className="border-2 border-heaven-blue rounded-md mt-24 p-2 shadow-lg"
         value={search}
         onChange={(e) => handleSearch(e)}
       />
@@ -44,9 +44,9 @@ export default function TopList() {
           ?.filter((item) =>
             item.title.toLowerCase().includes(search.toLowerCase()),
           )
-          .map((item) => (
+          .map((item, index) => (
             <div className="italic mt-16 w-1/2" key={item.mal_id}>
-              <h2 className="text-lg font-extrabold">{item.title}</h2>
+              <h2 className="text-lg font-extrabold">{index + 1} : {item.title}</h2>
               <h3 className="text-md font-bold">
                 Japanese :{" "}
                 {item.titles.find((item) => item.type === "Japanese")?.title}
@@ -59,7 +59,7 @@ export default function TopList() {
                 width={1920}
                 height={1080}
                 alt={`image of ${item.title}`}
-                className="mt-5 w-1/3"
+                className="mt-5 w-1/3 shadow-2xl"
               />
             </div>
           ))}
