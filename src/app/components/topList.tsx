@@ -34,8 +34,8 @@ export default function TopList() {
   }, [fetchData])
 
   return (
-    <div>
-      <div className="flex justify-center mt-24">
+    <div className="mt-24">
+      <div className="flex justify-center">
         <input
           type="text"
           placeholder="Search in top"
@@ -51,8 +51,8 @@ export default function TopList() {
             item.title.toLowerCase().includes(search.toLowerCase()),
           )
           .map((item, index) => (
-            <div className="italic mt-16 ml-16" key={item.mal_id}>
-              <h2 className="text-lg font-extrabold">
+            <div className="italic mt-16 ml-10" key={item.mal_id}>
+              <h2 className="text-2xl font-extrabold">
                 {index + 1} : {item.title}
               </h2>
               <h3 className="text-md font-bold">

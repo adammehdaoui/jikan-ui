@@ -38,7 +38,7 @@ export default function SchedulesList() {
     <div className="flex flex-wrap justify-center mt-24">
       {data.map((item, index) => (
         <div className="italic mt-16 ml-8 w-auto" key={item.mal_id}>
-          <h2 className="text-lg font-extrabold">
+          <h2 className="text-xl font-extrabold">
             {index + 1} : {item.title}
           </h2>
           <h3 className="text-md font-bold">
@@ -48,7 +48,7 @@ export default function SchedulesList() {
           <h3 className="text-heaven-red">
             {item.broadcast.string != "Unknown"
               ? "Broadcast on : " + item.broadcast.string
-              : "Unknown broadcast from Jinkan"}
+              : "Unknown broadcast from Jikan"}
           </h3>
           <AnimeCard url={item.images.jpg.large_image_url} title={item.title} />
         </div>
