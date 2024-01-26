@@ -10,8 +10,8 @@ const config: Config = {
     colors: {
       "heaven-blue": "#00a3fe",
       "heaven-red": "#de5d58",
-      "heaven-low-gray": "#f2f5f9",
-      "heaven-gray": "#6c727f",
+      "heaven-low-gray": "#a0a0a0",
+      "heaven-gray": "#23252b",
       "heaven-white": "#ffffff",
     },
   },

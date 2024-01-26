@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Logo() {
   return (
-    <div className="mt-1">
+    <div className="mt-2">
       <Image 
         src="/logo.png" 
         width={1920} 

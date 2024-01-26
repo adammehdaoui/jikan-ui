@@ -35,22 +35,24 @@ export default function SchedulesList() {
   }, [fetchData])
 
   return (
-    <div className="flex flex-wrap justify-center mt-24">
+    <div className="flex flex-wrap justify-center w-full mt-14">
       {data.map((item, index) => (
-        <div className="italic mt-16 ml-8 w-auto" key={item.mal_id}>
-          <h2 className="text-xl font-extrabold">
-            {index + 1} : {item.title}
-          </h2>
-          <h3 className="text-md font-bold">
-            Japanese :{" "}
-            {item.titles.find((item) => item.type === "Japanese")?.title}
-          </h3>
-          <h3 className="text-heaven-red">
-            {item.broadcast.string != "Unknown"
-              ? "Broadcast on : " + item.broadcast.string
-              : "Unknown broadcast from Jikan"}
-          </h3>
+        <div className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black" key={item.mal_id}>
           <AnimeCard url={item.images.jpg.large_image_url} title={item.title} />
+          <div className="mt-2">
+            <h2 className="text-xl font-extrabold">
+              {index + 1} : {item.title}
+            </h2>
+            <h3 className="text-md font-bold">
+              Japanese :{" "}
+              {item.titles.find((item) => item.type === "Japanese")?.title}
+            </h3>
+            <h3 className="text-heaven-red">
+              {item.broadcast.string != "Unknown"
+                ? "Broadcast on : " + item.broadcast.string
+                : "Unknown broadcast from Jikan"}
+            </h3>
+          </div>
         </div>
       ))}
     </div>

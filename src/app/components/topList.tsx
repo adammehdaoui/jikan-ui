@@ -51,21 +51,23 @@ export default function TopList() {
             item.title.toLowerCase().includes(search.toLowerCase()),
           )
           .map((item, index) => (
-            <div className="italic mt-16 ml-10" key={item.mal_id}>
-              <h2 className="text-2xl font-extrabold">
-                {index + 1} : {item.title}
-              </h2>
-              <h3 className="text-md font-bold">
-                Japanese :{" "}
-                {item.titles.find((item) => item.type === "Japanese")?.title}
-              </h3>
-              <a href={item.url} className="text-heaven-blue">
-                MyAnimeList details
-              </a>
+            <div className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black" key={item.mal_id}>
               <AnimeCard
                 url={item.images.jpg.large_image_url}
                 title={item.title}
               />
+              <div className="mt-2">
+                <h2 className="text-xl font-extrabold">
+                  {index + 1} : {item.title}
+                </h2>
+                <h3 className="text-md font-bold text-heaven-low-gray">
+                  Japanese :{" "}
+                  {item.titles.find((item) => item.type === "Japanese")?.title}
+                </h3>
+                <a href={item.url} className="text-heaven-blue">
+                  MyAnimeList details
+                </a>
+              </div>
             </div>
           ))}
       </div>
