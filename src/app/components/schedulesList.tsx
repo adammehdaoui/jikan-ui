@@ -37,7 +37,10 @@ export default function SchedulesList() {
   return (
     <div className="flex flex-wrap justify-center w-full mt-14">
       {data.map((item, index) => (
-        <div className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black" key={item.mal_id}>
+        <div
+          className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
+          key={item.mal_id}
+        >
           <AnimeCard url={item.images.jpg.large_image_url} title={item.title} />
           <div className="mt-2">
             <h2 className="text-xl font-extrabold">

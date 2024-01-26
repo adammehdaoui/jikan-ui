@@ -35,7 +35,7 @@ export default function Header() {
             alt={"connected user"}
             className="w-10 rounded-full"
             priority={true}
-           />
+          />
         </div>
       </div>
     </header>

@@ -5,8 +5,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src/app/**/*.tsx",
     "format": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "./eslintrc.cjs"
+    ]
   },
   "dependencies": {
     "next": "14.0.4",

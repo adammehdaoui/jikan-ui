@@ -1,41 +1,41 @@
-{
-  "root": true,
-  "extends": [
+module.exports = {
+  root: true,
+  extends: [
     "eslint:recommended",
+    "prettier",
     "next",
     "plugin:react/recommended",
-    "prettier"
   ],
-  "plugins": ["prettier", "react", "react-hooks"],
-  "env": {
-    "es2022": true,
-    "node": true
+  plugins: ["react", "react-hooks"],
+  env: {
+    es2022: true,
+    node: true,
   },
-  "parserOptions": {
-    "sourceType": "module"
+  parserOptions: {
+    sourceType: "module",
   },
-  "rules": {
-    "indent": "off",
+  rules: {
+    indent: "off",
     "linebreak-style": ["error", "unix"],
-    "quotes": [
+    quotes: [
       "error",
       "double",
-      { "avoidEscape": true, "allowTemplateLiterals": true }
+      { avoidEscape: true, allowTemplateLiterals: true },
     ],
-    "semi": ["error", "never"],
+    semi: ["error", "never"],
     "no-console": "error",
     "no-implicit-globals": "error",
-    "no-warning-comments": ["error", { "terms": ["fixme", "todo"] }],
+    "no-warning-comments": ["error", { terms: ["fixme", "todo"] }],
     "newline-before-return": "error",
-    "curly": "error",
+    curly: "error",
     "padded-blocks": ["error", "never"],
     "space-before-blocks": "error",
     "padding-line-between-statements": [
       "error",
       {
-        "blankLine": "always",
-        "prev": "*",
-        "next": [
+        blankLine: "always",
+        prev: "*",
+        next: [
           "break",
           "case",
           "cjs-export",
@@ -46,12 +46,12 @@
           "switch",
           "try",
           "while",
-          "return"
-        ]
+          "return",
+        ],
       },
       {
-        "blankLine": "always",
-        "prev": [
+        blankLine: "always",
+        prev: [
           "break",
           "case",
           "cjs-export",
@@ -62,20 +62,16 @@
           "switch",
           "try",
           "while",
-          "return"
+          "return",
         ],
-        "next": "*"
-      }
+        next: "*",
+      },
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],
+    "react/no-unescaped-entities": ["error", { forbid: [">", "}"] }],
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  settings: { react: { version: "detect" } },
 }

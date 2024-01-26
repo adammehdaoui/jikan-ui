@@ -51,7 +51,10 @@ export default function TopList() {
             item.title.toLowerCase().includes(search.toLowerCase()),
           )
           .map((item, index) => (
-            <div className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black" key={item.mal_id}>
+            <div
+              className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
+              key={item.mal_id}
+            >
               <AnimeCard
                 url={item.images.jpg.large_image_url}
                 title={item.title}
