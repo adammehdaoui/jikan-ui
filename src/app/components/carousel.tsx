@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react"
+import { useMemo, useCallback, useState } from "react"
 import { data } from "@/data/carouselData"
 import CarouselCard from "@/components/carouselCard"
 import Image from "next/image"
@@ -8,13 +8,23 @@ import Image from "next/image"
 export default function Carousel() {
   const [displayedCard, setDisplayedCard] = useState(1)
 
+  const idList = useMemo(() => data.map((item) => item.id), [])
+  const maxId = useMemo(() => Math.max(...idList), [idList])
+  const minId = useMemo(() => Math.min(...idList), [idList])
+
   const handleClick = useCallback(
     (type: "previous" | "next") => {
-      type === "previous"
-        ? setDisplayedCard(displayedCard - 1)
-        : setDisplayedCard(displayedCard + 1)
+      if (type === "previous") {
+        if (minId < displayedCard) {
+          setDisplayedCard(displayedCard - 1)
+        }
+      } else if (type === "next") {
+        if (maxId > displayedCard) {
+          setDisplayedCard(displayedCard + 1)
+        }
+      }
     },
-    [displayedCard],
+    [displayedCard, minId, maxId],
   )
 
   return (

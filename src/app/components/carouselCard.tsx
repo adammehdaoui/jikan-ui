@@ -16,6 +16,7 @@ export default function CarouselCard({
       width={1920}
       alt={`background image of ${title}`}
       className={`w-full ${hidden === true ? "hidden" : null}`}
+      loading="eager"
     />
   )
 }
