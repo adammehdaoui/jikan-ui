@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <header className="fixed top-0 w-full bg-heaven-blue pb-4">
+    <header className="fixed top-0 w-full bg-gradient-to-r from-heaven-blue via-heaven-blue to-heaven-green pb-4">
       <div className="flex flex-wrap ml-3 sm:ml-20">
         <Link href="/">
           <Brand />

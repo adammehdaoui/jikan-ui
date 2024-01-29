@@ -52,7 +52,7 @@ export default function TopList() {
           )
           .map((item, index) => (
             <div
-              className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
+              className="justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
               key={item.mal_id}
             >
               <AnimeCard
@@ -63,13 +63,18 @@ export default function TopList() {
                 <h2 className="text-xl font-extrabold">
                   {index + 1} : {item.title}
                 </h2>
-                <h3 className="text-md font-bold text-heaven-low-gray">
+                <h3 className="text-md italic text-heaven-low-gray">
                   Japanese :{" "}
                   {item.titles.find((item) => item.type === "Japanese")?.title}
                 </h3>
-                <a href={item.url} className="text-heaven-blue">
-                  MyAnimeList details
-                </a>
+                <div className="mt-6">
+                  <a
+                    href={item.url}
+                    className="p-3 text-heaven-white bg-heaven-blue rounded-lg"
+                  >
+                    MyAnimeList details
+                  </a>
+                </div>
               </div>
             </div>
           ))}

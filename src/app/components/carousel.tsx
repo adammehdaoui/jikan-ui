@@ -14,14 +14,10 @@ export default function Carousel() {
 
   const handleClick = useCallback(
     (type: "previous" | "next") => {
-      if (type === "previous") {
-        if (minId < displayedCard) {
-          setDisplayedCard(displayedCard - 1)
-        }
-      } else if (type === "next") {
-        if (maxId > displayedCard) {
-          setDisplayedCard(displayedCard + 1)
-        }
+      if (type === "previous" && minId < displayedCard) {
+        setDisplayedCard(displayedCard - 1)
+      } else if (type === "next" && maxId > displayedCard) {
+        setDisplayedCard(displayedCard + 1)
       }
     },
     [displayedCard, minId, maxId],

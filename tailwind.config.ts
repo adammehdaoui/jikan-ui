@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       "heaven-blue": "#00a3fe",
+      "heaven-green": "#2ed3c0",
       "heaven-red": "#de5d58",
       "heaven-low-gray": "#a0a0a0",
       "heaven-gray": "#23252b",
