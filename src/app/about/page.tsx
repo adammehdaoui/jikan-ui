@@ -1,8 +1,8 @@
 export default function Page() {
   return (
     <div className="flex justify-center mt-36 sm:mt-24 w-full">
-      <div className="text-center w-5/6 border-2 border-heaven-blue p-6 rounded-xl">
-        <h2 className="text-2xl font-extrabold italic mb-4">About JikanUI</h2>
+      <div className="text-center text-heaven-white w-5/6 p-6 rounded-xl bg-heaven-blue">
+        <h2 className="text-xl italic mb-4">About JikanUI</h2>
         <p className="sm:text-lg leading-relaxed">
           Welcome to JikanUI, your premier destination for delving into the rich
           tapestry of anime with an educational perspective. Fueled by the

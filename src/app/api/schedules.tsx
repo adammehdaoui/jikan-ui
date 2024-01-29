@@ -2,9 +2,12 @@
 
 export default async function fetchSchedules() {
   try {
-    const response = await fetch("https://api.jikan.moe/v4/schedules", {
-      method: "GET",
-    })
+    const response = await fetch(
+      "https://api.jikan.moe/v4/schedules?sfw=true",
+      {
+        method: "GET",
+      },
+    )
     const data = await response.json()
 
     return data.data

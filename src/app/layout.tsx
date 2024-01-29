@@ -2,11 +2,11 @@ import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
 import "@/globals.css"
 import { Metadata } from "next"
-import { Lato } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
+import { Poppins } from "next/font/google"
 
-const lato = Lato({ subsets: ["latin"], weight: ["400"] })
+const poppins = Poppins({ subsets: ["latin"], weight: ["500"] })
 
 export const metadata: Metadata = {
   title: "JikanUI",
@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={lato.className}>
-      <body>
+    <html lang="fr">
+      <body className={poppins.className}>
         <Header />
         <div>{children}</div>
         <Toaster richColors position="bottom-right" />

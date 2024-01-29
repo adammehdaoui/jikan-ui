@@ -3,7 +3,7 @@
 export default async function fetchTop() {
   try {
     const response = await fetch(
-      "https://api.jikan.moe/v4/top/anime?filter=bypopularity&filter=airing",
+      "https://api.jikan.moe/v4/top/anime?filter=bypopularity&filter=airing&sfw=true",
       { method: "GET" },
     )
     const data = await response.json()

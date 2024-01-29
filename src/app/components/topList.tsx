@@ -34,7 +34,7 @@ export default function TopList() {
   }, [fetchData])
 
   return (
-    <div className="mt-24">
+    <div className="mt-32">
       <div className="flex justify-center">
         <input
           type="text"
