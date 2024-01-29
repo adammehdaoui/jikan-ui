@@ -36,15 +36,25 @@ export default function Carousel() {
             onClick={() => handleClick("previous")}
           />
         </button>
-        {data.map((item) => (
-          <div key={item.id}>
-            <CarouselCard
-              title={item.title}
-              path={item.image}
-              hidden={item.id === displayedCard ? false : true}
-            />
+        <div className="relative">
+          <div>
+            {data.map((item) => (
+              <div key={item.id}>
+                <CarouselCard
+                  animeInfo={{ title: item.title, link: item.link }}
+                  path={item.image}
+                  hidden={item.id === displayedCard ? false : true}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+          <div className="absolute z-20 bottom-5 left-5">
+            <span className="p-1 border-2 border-heaven-white bg-heaven-white rounded-full"></span>
+          </div>
+          <div className="absolute z-20 bottom-5 left-10">
+            <span className="p-1 border-2 border-heaven-white rounded-full"></span>
+          </div>
+        </div>
         <button aria-label="switch to next" className="w-14">
           <Image
             src="/assets/svg/switch.svg"
