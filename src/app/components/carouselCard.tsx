@@ -15,7 +15,9 @@ export default function CarouselCard({
   const { title, link } = animeInfo
 
   return (
-    <div className="relative">
+    <div
+      className={`relative transition-opacity duration-200 opacity-${hidden ? "0" : "100"}`}
+    >
       <Image
         src={`/assets/backgrounds/${path}.jpeg`}
         height={1080}

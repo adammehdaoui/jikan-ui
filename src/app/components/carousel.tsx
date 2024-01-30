@@ -36,7 +36,7 @@ export default function Carousel() {
 
   return (
     <div className="flex justify-center mt-32 w-full">
-      <div className="flex w-96 relative">
+      <div className="flex w-96 relative shadow-2xl">
         <div>
           <button
             aria-label="switch to previous"
