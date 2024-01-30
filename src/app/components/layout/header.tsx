@@ -1,4 +1,5 @@
 import Brand from "@/components/layout/brand"
+import MenuItem from "@/components/UI/menuItem"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -10,16 +11,11 @@ export default function Header() {
           <Brand />
         </Link>
         <div className="flex flex-wrap mt-5 text-heaven-white text-lg">
-          <div className="ml-5">
-            <Link href="/top">Top</Link>
-          </div>
-          <div className="ml-5">
-            <Link href="/schedules">Schedules</Link>
-          </div>
-          <div className="ml-5">
-            <Link href="/about">About</Link>
-          </div>
+          <MenuItem route="/top" text="Top" />
+          <MenuItem route="/schedules" text="Schedules" />
+          <MenuItem route="/about" text="About" />
         </div>
+        
         <div className="hidden sm:flex mt-3 ml-auto mr-20">
           <Image
             src="/assets/svg/search.svg"
@@ -32,7 +28,7 @@ export default function Header() {
             src={"/userTemplate.png"}
             width={500}
             height={500}
-            alt={"connected user"}
+            alt="connected user"
             className="w-10 rounded-full"
             priority={true}
           />

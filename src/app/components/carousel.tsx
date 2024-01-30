@@ -3,7 +3,7 @@
 import { useMemo, useCallback, useState, useEffect } from "react"
 import { data } from "@/data/carouselData"
 import CarouselCard from "@/components/carouselCard"
-import Image from "next/image"
+import SlideItem from "@/components/UI/slideItem"
 import { clsx } from "clsx"
 
 export default function Carousel() {
@@ -37,21 +37,7 @@ export default function Carousel() {
   return (
     <div className="flex justify-center mt-32 w-full">
       <div className="flex w-80 relative shadow-2xl">
-        <div>
-          <button
-            aria-label="switch to previous"
-            className="left-0 transition ease-in-out duration-300 absolute w-8 right-0 top-1/2 z-20 hover:scale-150"
-          >
-            <Image
-              src="/assets/svg/switch.svg"
-              width={500}
-              height={500}
-              alt="switch"
-              className="rotate-180"
-              onClick={() => handleSlideChange("previous")}
-            />
-          </button>
-        </div>
+        <SlideItem type="previous" handleSlideChange={handleSlideChange} />
         <div className="flex">
           {data.map((item) => (
             <div key={item.id}>
@@ -71,7 +57,7 @@ export default function Carousel() {
               <div
                 key={`${item.title}_${index}`}
                 className={clsx(
-                  "p-1 border-2 border-heaven-white rounded-full",
+                  "p-1 border-2 border-heaven-white rounded-full transition-colors duration-1000 ease-in-out",
                   {
                     "bg-heaven-white": displayedCard === item.id,
                   },
@@ -80,20 +66,7 @@ export default function Carousel() {
             ))}
           </div>
         </div>
-        <div>
-          <button
-            aria-label="switch to next"
-            className="transition ease-in-out duration-300 absolute w-8 right-0 top-1/2 z-20 hover:scale-150"
-          >
-            <Image
-              src="/assets/svg/switch.svg"
-              width={500}
-              height={500}
-              alt="switch"
-              onClick={() => handleSlideChange("next")}
-            />
-          </button>
-        </div>
+        <SlideItem type="next" handleSlideChange={handleSlideChange} />
       </div>
     </div>
   )

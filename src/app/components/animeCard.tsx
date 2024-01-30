@@ -14,7 +14,7 @@ export default function AnimeCard({
         width={720}
         height={1280}
         alt={`image of ${title}`}
-        className="w-full h-80 shadow-sm transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl cursor-pointer rounded-3xl"
+        className="w-full h-80 shadow-sm transition duration-300 ease-out hover:scale-110 cursor-pointer rounded-3xl"
         placeholder="blur"
         blurDataURL={url}
         loading="lazy"
