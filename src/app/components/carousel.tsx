@@ -4,6 +4,7 @@ import { useMemo, useCallback, useState } from "react"
 import { data } from "@/data/carouselData"
 import CarouselCard from "@/components/carouselCard"
 import Image from "next/image"
+import { clsx } from "clsx"
 
 export default function Carousel() {
   const [displayedCard, setDisplayedCard] = useState(1)
@@ -37,7 +38,7 @@ export default function Carousel() {
           />
         </button>
         <div className="relative">
-          <div>
+          <div className="flex">
             {data.map((item) => (
               <div key={item.id}>
                 <CarouselCard
@@ -48,11 +49,18 @@ export default function Carousel() {
               </div>
             ))}
           </div>
-          <div className="absolute z-20 bottom-5 left-5">
-            <span className="p-1 border-2 border-heaven-white bg-heaven-white rounded-full"></span>
-          </div>
-          <div className="absolute z-20 bottom-5 left-10">
-            <span className="p-1 border-2 border-heaven-white rounded-full"></span>
+          <div className="absolute flex justify-evenly w-1/3 bottom-10 left-5 z-10">
+            {data.map((item, index) => (
+              <div
+                key={`${item.title}_${index}`}
+                className={clsx(
+                  "p-1 border-2 border-heaven-white rounded-full",
+                  {
+                    "bg-heaven-white": displayedCard === item.id,
+                  },
+                )}
+              ></div>
+            ))}
           </div>
         </div>
         <button aria-label="switch to next" className="w-14">
