@@ -36,11 +36,11 @@ export default function Carousel() {
 
   return (
     <div className="flex justify-center mt-32 w-full">
-      <div className="flex w-90 relative shadow-2xl">
+      <div className="flex w-80 relative shadow-2xl">
         <div>
           <button
             aria-label="switch to previous"
-            className="absolute w-8 left-0 top-1/2 z-20"
+            className="left-0 transition ease-in-out duration-300 absolute w-8 right-0 top-1/2 z-20 hover:scale-150"
           >
             <Image
               src="/assets/svg/switch.svg"
@@ -56,7 +56,11 @@ export default function Carousel() {
           {data.map((item) => (
             <div key={item.id}>
               <CarouselCard
-                animeInfo={{ title: item.title, link: item.link }}
+                animeInfo={{
+                  title: item.title,
+                  link: item.link,
+                  description: item.description,
+                }}
                 path={item.image}
                 hidden={item.id === displayedCard ? false : true}
               />
@@ -79,7 +83,7 @@ export default function Carousel() {
         <div>
           <button
             aria-label="switch to next"
-            className="absolute w-8 right-0 top-1/2 z-20"
+            className="transition ease-in-out duration-300 absolute w-8 right-0 top-1/2 z-20 hover:scale-150"
           >
             <Image
               src="/assets/svg/switch.svg"
