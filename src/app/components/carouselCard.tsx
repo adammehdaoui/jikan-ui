@@ -16,18 +16,18 @@ export default function CarouselCard({
 
   return (
     <div
-      className={`relative transition-opacity duration-200 opacity-${hidden ? "0" : "100"}`}
+      className={`relative ${hidden ? "hidden" : "null"} transition duration-500 ease-in-out`}
     >
       <Image
         src={`/assets/backgrounds/${path}.jpeg`}
         height={1080}
         width={1920}
         alt={`background image of ${title}`}
-        className={`w-full ${hidden === true ? "hidden" : null}`}
+        className={`w-full`}
         loading="eager"
       />
       <div
-        className={`absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-heaven-blue via-transparent ${hidden === true ? "hidden" : null}`}
+        className={`absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-heaven-blue via-transparent`}
       >
         <div className="ml-8 mt-8">
           <h2 className={`text-heaven-white text-2xl ${unbounded.className}`}>
