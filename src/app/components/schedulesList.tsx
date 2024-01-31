@@ -17,18 +17,18 @@ export default function SchedulesList() {
 
   useEffect(() => {
     toast.info("Animes scheduled for today")
-  }, [today])
+  }, [])
 
   const fetchData = useCallback(async () => {
     try {
-      const data = await fetchSchedules()
+      const data = await fetchSchedules(today)
       setData(data)
     } catch (error) {
       toast.error(
         "Too many calls to Jikan API, please wait a few seconds and refresh the page.",
       )
     }
-  }, [])
+  }, [today])
 
   useEffect(() => {
     fetchData()
@@ -41,7 +41,7 @@ export default function SchedulesList() {
           className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
           key={item.mal_id}
         >
-          <AnimeCard url={item.images.jpg.large_image_url} title={item.title} />
+          <AnimeCard url={item.images.jpg.image_url} title={item.title} />
           <div className="mt-2">
             <h2 className="text-xl font-extrabold">
               {index + 1} : {item.title}

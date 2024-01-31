@@ -35,39 +35,37 @@ export default function Carousel() {
   }, [handleSlideChange])
 
   return (
-    <div className="flex justify-center mt-32 w-full">
-      <div className="flex w-80 relative shadow-2xl">
-        <SlideItem type="previous" handleSlideChange={handleSlideChange} />
-        <div className="flex">
-          {data.map((item) => (
-            <div key={item.id}>
-              <CarouselCard
-                animeInfo={{
-                  title: item.title,
-                  link: item.link,
-                  description: item.description,
-                }}
-                path={item.image}
-                hidden={item.id === displayedCard ? false : true}
-              />
-            </div>
-          ))}
-          <div className="absolute flex justify-evenly w-1/4 bottom-10 left-5 z-10">
-            {data.map((item, index) => (
-              <div
-                key={`${item.title}_${index}`}
-                className={clsx(
-                  "p-1 border-2 border-heaven-white rounded-full transition-colors duration-1000 ease-in-out",
-                  {
-                    "bg-heaven-white": displayedCard === item.id,
-                  },
-                )}
-              ></div>
-            ))}
+    <div className="flex w-80 relative">
+      <SlideItem type="previous" handleSlideChange={handleSlideChange} />
+      <div className="flex">
+        {data.map((item) => (
+          <div key={item.id}>
+            <CarouselCard
+              animeInfo={{
+                title: item.title,
+                link: item.link,
+                description: item.description,
+              }}
+              path={item.image}
+              hidden={item.id === displayedCard ? false : true}
+            />
           </div>
+        ))}
+        <div className="absolute flex justify-evenly w-1/4 bottom-10 left-5 z-10">
+          {data.map((item, index) => (
+            <div
+              key={`${item.title}_${index}`}
+              className={clsx(
+                "p-1 border-2 border-heaven-white rounded-full transition-colors duration-1000 ease-in-out",
+                {
+                  "bg-heaven-white": displayedCard === item.id,
+                },
+              )}
+            ></div>
+          ))}
         </div>
-        <SlideItem type="next" handleSlideChange={handleSlideChange} />
       </div>
+      <SlideItem type="next" handleSlideChange={handleSlideChange} />
     </div>
   )
 }

@@ -18,9 +18,7 @@ export default function CarouselCard({
     <div
       className={`relative ${hidden ? "hidden opacity-0" : "opacity-100"} transition-all duration-1000 ease-in-out`}
     >
-      <div
-        className={`absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-heaven-blue via-transparent`}
-      >
+      <div className="absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-heaven-blue via-transparent rounded-2xl shadow-2xl">
         <div className="ml-8 mt-8 text-heaven-white">
           <h2 className={`text-2xl ${unbounded.className}`}>{title}</h2>
           <div className="mt-5">
@@ -38,6 +36,7 @@ export default function CarouselCard({
         src={`/assets/backgrounds/${path}.jpeg`}
         height={1080}
         width={1920}
+        className="rounded-2xl"
         alt={`background image of ${title}`}
         priority={true}
       />

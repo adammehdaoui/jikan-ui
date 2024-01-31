@@ -1,9 +1,9 @@
 "use server"
 
-export default async function fetchSchedules() {
+export default async function fetchSchedules(today: string) {
   try {
     const response = await fetch(
-      "https://api.jikan.moe/v4/schedules?sfw=true",
+      `https://api.jikan.moe/v4/schedules?filter=${today}&sfw=true`,
       {
         method: "GET",
       },
