@@ -1,6 +1,6 @@
 "use client"
 
-import fetchTop from "@/api/top"
+import fetchTop from "@/api/jikan/top"
 import AnimeCard from "@/components/animeCard"
 import AnimeData from "@/models/AnimeData"
 import React, { useCallback, useEffect, useState } from "react"

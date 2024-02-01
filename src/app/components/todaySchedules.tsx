@@ -4,7 +4,7 @@ import React, { useReducer, useEffect, useCallback, useMemo } from "react"
 import { Unbounded } from "next/font/google"
 import AnimeData from "@/models/AnimeData"
 import { SchedulesActions } from "@/models/SchedulesActions"
-import fetchSchedules from "@/api/schedules"
+import fetchSchedules from "@/api/jikan/schedules"
 import { toast } from "sonner"
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["500"] })
