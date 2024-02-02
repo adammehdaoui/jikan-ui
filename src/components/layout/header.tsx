@@ -1,5 +1,5 @@
 import Brand from "@/components/layout/brand"
-import MenuItem from "@/components/UI/menuItem"
+import MenuItem from "@/components/interface/menuItem"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -15,7 +15,7 @@ export default function Header() {
           <MenuItem route="/schedules" text="Schedules" />
           <MenuItem route="/about" text="About" />
         </div>
-        
+
         <div className="hidden sm:flex mt-3 ml-auto mr-20">
           <Image
             src="/assets/svg/search.svg"

@@ -4,7 +4,7 @@ import React, { useReducer, useEffect, useCallback, useMemo } from "react"
 import { Unbounded } from "next/font/google"
 import AnimeData from "@/models/AnimeData"
 import { SchedulesActions } from "@/models/SchedulesActions"
-import fetchSchedules from "@/api/jikan/schedules"
+import { fetchSchedules } from "@/api/jikan/schedules"
 import { toast } from "sonner"
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["500"] })
@@ -54,14 +54,14 @@ export default function TodaySchedules() {
 
   return (
     <div
-      className={`bg-heaven-green text-heaven-white ml-20 w-2/3 rounded-2xl hidden xl:block ${schedulesState.loading ? "animate-pulse" : null}`}
+      className={`bg-heaven-green text-heaven-white ml-20 w-1/3 rounded-2xl hidden xl:block ${schedulesState.loading ? "animate-pulse" : null}`}
     >
       <div className="flex justify-center">
         <h2 className={`mt-6 text-xl ${unbounded.className}`}>TODAY</h2>
       </div>
       <div className="mt-6 w-5/6 mx-auto">
         {schedulesState.data.map((item, index) => (
-          <div key={`${item.title}—${index}`} className="mt-3">
+          <div key={`${item.title}—${index}`} className="mt-3 pb-10">
             <span className={unbounded.className}>{item.title}</span> at{" "}
             <span className={unbounded.className}>{item.broadcast.string}</span>
           </div>

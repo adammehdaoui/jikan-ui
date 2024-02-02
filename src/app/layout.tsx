@@ -1,6 +1,6 @@
 import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
-import "@/globals.css"
+import "@/app/globals.css"
 import { Metadata } from "next"
 import React from "react"
 import { Toaster } from "sonner"

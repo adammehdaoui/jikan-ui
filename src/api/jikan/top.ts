@@ -1,12 +1,10 @@
 "use server"
 
-export default async function fetchSchedules(today: string) {
+export async function fetchTop() {
   try {
     const response = await fetch(
-      `https://api.jikan.moe/v4/schedules?filter=${today}&sfw=true`,
-      {
-        method: "GET",
-      },
+      "https://api.jikan.moe/v4/top/anime?filter=bypopularity&filter=airing&sfw=true",
+      { method: "GET" },
     )
     const data = await response.json()
 

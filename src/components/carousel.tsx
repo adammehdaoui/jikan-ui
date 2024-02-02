@@ -3,7 +3,7 @@
 import { useMemo, useCallback, useState, useEffect } from "react"
 import { data } from "@/data/carouselData"
 import CarouselCard from "@/components/carouselCard"
-import SlideItem from "@/components/UI/slideItem"
+import SlideItem from "@/components/interface/slideItem"
 import { clsx } from "clsx"
 
 export default function Carousel() {
@@ -35,7 +35,7 @@ export default function Carousel() {
   }, [handleSlideChange])
 
   return (
-    <div className="flex w-80 relative">
+    <div className="flex w-card-width h-card-height relative">
       <SlideItem type="previous" handleSlideChange={handleSlideChange} />
       <div className="flex">
         {data.map((item) => (
