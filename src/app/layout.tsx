@@ -1,10 +1,9 @@
-import Footer from "@/components/layout/footer"
-import Header from "@/components/layout/header"
 import "@/app/globals.css"
+import Header from "@/components/layout/header"
 import { Metadata } from "next"
+import { Poppins } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
-import { Poppins } from "next/font/google"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["500"] })
 
@@ -25,7 +24,6 @@ export default function RootLayout({
         <Header />
         <div>{children}</div>
         <Toaster richColors position="bottom-right" />
-        <Footer />
       </body>
     </html>
   )

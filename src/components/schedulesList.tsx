@@ -1,10 +1,10 @@
 "use client"
 
 import { fetchSchedules } from "@/api/jikan/schedules"
+import AnimeCard from "@/components/animeCard"
 import AnimeData from "@/models/AnimeData"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { toast } from "sonner"
-import AnimeCard from "./animeCard"
 
 export default function SchedulesList() {
   const [data, setData] = useState<AnimeData[]>([])
@@ -21,7 +21,7 @@ export default function SchedulesList() {
 
   const fetchData = useCallback(async () => {
     try {
-      const data = await fetchSchedules(today)
+      const data = await fetchSchedules(today, 2)
       setData(data)
     } catch (error) {
       toast.error(

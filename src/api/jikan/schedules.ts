@@ -1,9 +1,13 @@
 "use server"
 
-export async function fetchSchedules(today: string) {
+export async function fetchSchedules(
+  today: string,
+  page: number,
+  limit?: number,
+) {
   try {
     const response = await fetch(
-      `https://api.jikan.moe/v4/schedules?filter=${today}&sfw=true`,
+      `https://api.jikan.moe/v4/schedules?filter=${today}&page=${page}&sfw=true${limit ? `&limit=${limit}` : ``}`,
       {
         method: "GET",
       },

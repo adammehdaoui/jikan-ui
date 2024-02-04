@@ -1,10 +1,10 @@
 "use client"
 
-import { useMemo, useCallback, useState, useEffect } from "react"
-import { data } from "@/data/carouselData"
 import CarouselCard from "@/components/carouselCard"
 import SlideItem from "@/components/interface/slideItem"
+import { data } from "@/data/carouselData"
 import { clsx } from "clsx"
+import { useCallback, useEffect, useMemo, useState } from "react"
 
 export default function Carousel() {
   const [displayedCard, setDisplayedCard] = useState(1)
@@ -35,7 +35,7 @@ export default function Carousel() {
   }, [handleSlideChange])
 
   return (
-    <div className="flex w-card-width h-card-height relative">
+    <div className="flex w-card-width relative">
       <SlideItem type="previous" handleSlideChange={handleSlideChange} />
       <div className="flex">
         {data.map((item) => (
