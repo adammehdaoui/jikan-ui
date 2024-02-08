@@ -1,9 +1,20 @@
 import "@/app/globals.css"
 import Header from "@/components/layout/header"
+import { PrismaClient } from "@prisma/client"
 import { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
+
+const prisma = new PrismaClient()
+
+const newUser = await prisma.users.create({
+  data: {
+    username: "test",
+    mail: "test",
+    password: "test",
+  },
+})
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["500"] })
 
