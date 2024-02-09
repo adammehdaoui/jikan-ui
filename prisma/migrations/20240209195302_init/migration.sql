@@ -1,0 +1,27 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[Users] (
+    [id] INT NOT NULL IDENTITY(1,1),
+    [username] VARCHAR(20) NOT NULL,
+    [mail] VARCHAR(50) NOT NULL,
+    [password] VARCHAR(100) NOT NULL,
+    [createdDate] DATETIME2 NOT NULL CONSTRAINT [Users_createdDate_df] DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT [Users_pkey] PRIMARY KEY CLUSTERED ([id]),
+    CONSTRAINT [Users_username_key] UNIQUE NONCLUSTERED ([username])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

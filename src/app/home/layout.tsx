@@ -1,6 +1,11 @@
 import "@/app/globals.css"
+import Header from "@/components/layout/header"
 import { Metadata } from "next"
+import { Poppins } from "next/font/google"
 import React from "react"
+import { Toaster } from "sonner"
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["500"] })
 
 export const metadata: Metadata = {
   title: "JikanUI",
@@ -15,8 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>
+      <body className={poppins.className}>
+        <Header />
         <div>{children}</div>
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   )
