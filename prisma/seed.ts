@@ -4,11 +4,10 @@ const prisma = new PrismaClient()
 
 async function main() {
   try {
-    await prisma.users.create({
+    await prisma.user.create({
       data: {
-        username: "noborder",
-        mail: "noborder94130@gmail.com",
-        password: "123",
+        name: "noborder",
+        hashedPassword: "123",
       },
     })
   } catch (error) {

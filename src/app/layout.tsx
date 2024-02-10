@@ -1,6 +1,7 @@
 import "@/app/globals.css"
 import { Metadata } from "next"
 import React from "react"
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   title: "JikanUI",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <div>{children}</div>
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   )
