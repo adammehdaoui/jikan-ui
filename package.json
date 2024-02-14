@@ -20,10 +20,12 @@
     ]
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^1.3.3",
+    "@next-auth/prisma-adapter": "^0.4.4-canary.81",
     "@prisma/client": "^5.9.1",
     "clsx": "^2.1.0",
     "next": "14.0.4",
-    "next-auth": "^5.0.0-beta.9",
+    "next-auth": "^4.24.6",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.6.0",
