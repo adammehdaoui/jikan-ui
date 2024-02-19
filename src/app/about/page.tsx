@@ -1,4 +1,4 @@
-export default function Page() {
+export default function About() {
   return (
     <div className="flex justify-center mt-36 sm:mt-24 w-full">
       <div className="text-center text-heaven-white w-5/6 p-6 rounded-xl bg-heaven-blue">

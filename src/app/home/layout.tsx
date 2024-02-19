@@ -1,5 +1,5 @@
 import "@/app/globals.css"
-import Header from "@/components/layout/header"
+import Header from "@/src/components/layout/header"
 import { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import React from "react"

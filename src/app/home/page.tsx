@@ -1,8 +1,8 @@
-import Carousel from "@/components/carousel"
-import Footer from "@/components/layout/footer"
-import TodaySchedules from "@/components/todaySchedules"
+import Carousel from "@/src/components/carousel"
+import Footer from "@/src/components/layout/footer"
+import TodaySchedules from "@/src/components/todaySchedules"
 
-export default function Page() {
+export default function Home() {
   return (
     <div className="flex justify-center mt-32">
       <Carousel />
