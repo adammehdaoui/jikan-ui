@@ -1,4 +1,4 @@
-import "@/app/globals.css"
+import "@/src/app/globals.css"
 import { Metadata } from "next"
 import React from "react"
 import { Toaster } from "sonner"

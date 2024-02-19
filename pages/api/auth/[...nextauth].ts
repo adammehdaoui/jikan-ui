@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma"
+import prisma from "@/src/lib/prisma"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import NextAuth, { NextAuthOptions } from "next-auth"
 import GithubProvider from "next-auth/providers/github"
@@ -10,7 +10,7 @@ if (!githubId || !githubSecret) {
   throw new Error("GITHUB_ID and GITHUB_SECRET must be set!")
 }
 
-const authConfig = {
+export const authConfig = {
   providers: [
     GithubProvider({
       clientId: githubId,
