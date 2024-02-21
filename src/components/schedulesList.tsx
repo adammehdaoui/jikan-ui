@@ -1,8 +1,8 @@
 "use client"
 
 import { fetchSchedules } from "@/api/jikan/schedules"
-import AnimeCard from "@/components/animeCard"
-import AnimeData from "@/models/AnimeData"
+import AnimeCard from "@/src/components/animeCard"
+import AnimeData from "@/src/models/AnimeData"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { toast } from "sonner"
 

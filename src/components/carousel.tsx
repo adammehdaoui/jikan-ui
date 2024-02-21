@@ -1,8 +1,8 @@
 "use client"
 
-import CarouselCard from "@/components/carouselCard"
-import SlideItem from "@/components/interface/slideItem"
-import { data } from "@/data/carouselData"
+import CarouselCard from "@/src/components/carouselCard"
+import SlideItem from "@/src/components/interface/slideItem"
+import { data } from "@/src/data/carouselData"
 import { clsx } from "clsx"
 import { useCallback, useEffect, useMemo, useState } from "react"
 

@@ -1,5 +1,5 @@
-import MenuItem from "@/components/interface/menuItem"
-import Brand from "@/components/layout/brand"
+import MenuItem from "@/src/components/interface/menuItem"
+import Brand from "@/src/components/layout/brand"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -25,7 +25,7 @@ export default function Header() {
             className="w-6 mr-4"
           />
           <Image
-            src={"/userTemplate.png"}
+            src={"/assets/pfps/luffyGear5.png"}
             width={500}
             height={500}
             alt="connected user"

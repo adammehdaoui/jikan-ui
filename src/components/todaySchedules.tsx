@@ -1,8 +1,8 @@
 "use client"
 
 import { fetchSchedules } from "@/api/jikan/schedules"
-import AnimeData from "@/models/AnimeData"
-import { SchedulesActions } from "@/models/SchedulesActions"
+import AnimeData from "@/src/models/AnimeData"
+import { SchedulesActions } from "@/src/models/SchedulesActions"
 import { clsx } from "clsx"
 import { Unbounded } from "next/font/google"
 import { useCallback, useEffect, useMemo, useReducer } from "react"
