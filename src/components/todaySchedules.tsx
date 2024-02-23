@@ -76,7 +76,7 @@ export default function TodaySchedules() {
           : schedulesState.data.map((item, index) => (
               <div key={`${item.title}—${index}`} className="mt-3">
                 <span className={unbounded.className}>{item.title}</span>
-                <span className={unbounded.className}>
+                <span className={`ml-2 ${unbounded.className}`}>
                   {item.broadcast.string}
                 </span>
               </div>

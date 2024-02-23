@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center p-10 bg-slate-300 w-full absolute bottom-0 text-heaven-white space-y-3">
+    <div className="flex flex-col items-center p-10 bg-slate-300 w-full text-heaven-white space-y-3 text-center h-fit mt-12 md:mt-44">
       <div>© 2024 JikanUI is an educational project by Adam Mehdaoui</div>
       <a
         href="https://github.com/adammehdaoui/jikan_next"

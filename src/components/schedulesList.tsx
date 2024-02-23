@@ -23,6 +23,10 @@ export default function SchedulesList() {
     try {
       const data = await fetchSchedules(today, 2)
       setData(data)
+
+      if (data.length === 0) {
+        toast.warning("No animes scheduled for today :(")
+      }
     } catch (error) {
       toast.error(
         "Too many calls to Jikan API, please wait a few seconds and refresh the page.",
