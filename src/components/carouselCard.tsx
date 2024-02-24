@@ -1,5 +1,5 @@
-import Image from "next/image"
 import { Unbounded } from "next/font/google"
+import Image from "next/image"
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["500"] })
 
@@ -15,7 +15,7 @@ export default function CarouselCard({
   const { title, link, description } = animeInfo
 
   return (
-    <div className={`relative ${hidden ? "hidden" : null}`}>
+    <div className={`relative ${hidden && "hidden"}`}>
       <div className="absolute top-0 left-0 w-full h-full z-10 bg-gradient-to-r from-heaven-blue via-transparent rounded-2xl shadow-2xl">
         <div className="ml-8 mt-8 text-heaven-white">
           <h2 className={`text-2xl ${unbounded.className}`}>{title}</h2>

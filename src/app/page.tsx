@@ -1,23 +1,13 @@
-import { authConfig } from "@/src/app/api/auth/[...nextauth]/route"
-import LoginButton from "@/src/app/loginButton"
-import LogoutButton from "@/src/app/logoutButton"
-import { getServerSession } from "next-auth"
+import Carousel from "@/components/carousel"
+import Footer from "@/components/layout/footer"
+import TodaySchedules from "@/components/todaySchedules"
 
-export default async function Page() {
-  const session = await getServerSession(authConfig)
-
-  if (session) {
-    return (
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1>Welcome {JSON.stringify(session)}</h1>
-        <LogoutButton />
-      </div>
-    )
-  }
-
+export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <LoginButton />
+    <div className="flex justify-center mt-32">
+      <Carousel />
+      <TodaySchedules />
+      <Footer />
     </div>
   )
 }

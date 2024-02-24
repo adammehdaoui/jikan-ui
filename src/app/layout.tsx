@@ -1,4 +1,5 @@
-import "@/app/globals.css"
+import "@/src/app/globals.css"
+import Header from "@/components/layout/header"
 import { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import React from "react"
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={poppins.className}>
+        <Header />
         <div>{children}</div>
         <Toaster richColors position="bottom-right" />
       </body>

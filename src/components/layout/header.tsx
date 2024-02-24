@@ -1,5 +1,5 @@
-import MenuItem from "@/src/components/interface/menuItem"
-import Brand from "@/src/components/layout/brand"
+import MenuItem from "@/components/interface/menuItem"
+import Brand from "@/components/layout/brand"
 import Image from "next/image"
 import Link from "next/link"
 
