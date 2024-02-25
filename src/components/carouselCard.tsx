@@ -1,7 +1,7 @@
 import { Unbounded } from "next/font/google"
 import Image from "next/image"
 
-const unbounded = Unbounded({ subsets: ["latin"], weight: ["500"] })
+const unbounded = Unbounded({ subsets: ["latin"], weight: ["600"] })
 
 export default function CarouselCard({
   animeInfo,

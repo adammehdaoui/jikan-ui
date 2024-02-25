@@ -1,5 +1,5 @@
+import MainWrapper from "@/components/layout/mainWrapper"
 import "@/src/app/globals.css"
-import Header from "@/components/layout/header"
 import { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import React from "react"
@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={poppins.className}>
-        <Header />
-        <div>{children}</div>
+        <MainWrapper>{children}</MainWrapper>
         <Toaster richColors position="bottom-right" />
       </body>
     </html>
