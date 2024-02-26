@@ -20,7 +20,7 @@ const config: Config = {
         "card-width": "325px",
       },
       height: {
-        "card-height": "475px",
+        "card-height": "465px",
       },
     },
   },

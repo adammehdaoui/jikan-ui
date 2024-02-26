@@ -5,7 +5,7 @@ import TodaySchedules from "@/components/todaySchedules"
 
 export default function Page() {
   return (
-    <div className="flex flex-col items-center relative mt-32">
+    <div className="flex flex-col relative mt-32 md:mt-48">
       <MainContainer>
         <Carousel />
         <TodaySchedules />

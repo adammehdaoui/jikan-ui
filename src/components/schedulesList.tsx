@@ -21,11 +21,11 @@ export default function SchedulesList() {
 
   const fetchData = useCallback(async () => {
     try {
-      const data = await fetchSchedules(today, 2)
+      const data = await fetchSchedules(today, 1, 15)
       setData(data)
 
       if (data.length === 0) {
-        toast.warning("No animes scheduled for today :(")
+        toast.warning("No animes scheduled for today")
       }
     } catch (error) {
       toast.error(
@@ -39,7 +39,7 @@ export default function SchedulesList() {
   }, [fetchData])
 
   return (
-    <div className="flex flex-wrap justify-center w-full mt-14">
+    <div className="flex flex-wrap justify-center w-full mt-14 pb-10">
       {data.map((item, index) => (
         <div
           className="italic justify-self-center w-60 mt-16 ml-2 sm:ml-10 text-heaven-black"
