@@ -5,5 +5,9 @@ export default function MainContainer({
 }: {
   children: React.ReactNode
 }) {
-  return <div className="flex justify-center md:mt-20">{children}</div>
+  return (
+    <div className="flex flex-col items-center lg:flex-row lg:mx-10 lg:justify-center">
+      {children}
+    </div>
+  )
 }

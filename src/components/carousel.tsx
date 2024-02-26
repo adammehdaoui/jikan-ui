@@ -35,7 +35,7 @@ export default function Carousel() {
   }, [handleSlideChange])
 
   return (
-    <div className="flex w-card-width relative">
+    <div className="flex w-card-width relative shrink-0">
       <SlideItem type="previous" handleSlideChange={handleSlideChange} />
       <div className="flex">
         {data.map((item) => (
