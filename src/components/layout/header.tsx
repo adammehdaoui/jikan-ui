@@ -13,11 +13,10 @@ export default function Header({
 }) {
   const handleFocus = () => {
     changeVisible()
-    console.log("clicked")
   }
 
   return (
-    <header className="fixed top-0 w-full bg-black from-heaven-blue via-heaven-blue to-heaven-green pb-4 z-30">
+    <header className="fixed top-0 w-full bg-gradient-to-r from-heaven-blue via-heaven-blue to-heaven-green pb-4 z-30">
       <div className="flex flex-wrap ml-2 sm:ml-20">
         <Link href="/">
           <Brand />

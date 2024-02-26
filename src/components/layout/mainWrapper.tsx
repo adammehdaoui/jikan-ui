@@ -1,8 +1,10 @@
 "use client"
 
+import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header"
+import LogModal from "@/components/layout/logModal"
 import { useVisible } from "@/hooks/useVisible"
-import { clsx } from "clsx"
+import clsx from "clsx"
 import React from "react"
 
 export default function MainWrapper({
@@ -14,10 +16,12 @@ export default function MainWrapper({
 
   return (
     <>
-      <Header changeVisible={changeVisible} />
-      <div className={clsx(!visible && "brightness-50 bg-black")}>
-        {children}
+      <div className={clsx(!visible && "blur")}>
+        <Header changeVisible={changeVisible} />
+        <div>{children}</div>
+        <Footer />
       </div>
+      <LogModal visible={visible} />
     </>
   )
 }

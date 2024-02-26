@@ -68,7 +68,7 @@ export default function TodaySchedules() {
                 <div
                   key={`loading-${index}`}
                   className={clsx(
-                    "rounded-full bg-heaven-white h-4 mt-5 animate-pulse",
+                    "rounded-full bg-heaven-white h-4 mt-5 animate-pulse blur-xl",
                     index % 2 == 0 ? "w-1/2" : "w-2/3",
                   )}
                 ></div>

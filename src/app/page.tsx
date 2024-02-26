@@ -1,5 +1,4 @@
 import Carousel from "@/components/carousel"
-import Footer from "@/components/layout/footer"
 import TodaySchedules from "@/components/todaySchedules"
 
 export default function Home() {
@@ -7,7 +6,6 @@ export default function Home() {
     <div className="flex justify-center mt-32">
       <Carousel />
       <TodaySchedules />
-      <Footer />
     </div>
   )
 }
