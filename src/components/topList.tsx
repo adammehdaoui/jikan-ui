@@ -1,6 +1,6 @@
 "use client"
 
-import { fetchTop } from "@/api/jikan/top"
+import { fetchTop } from "@/app/api/jikan/top"
 import AnimeCard from "@/components/animeCard"
 import Spinner from "@/components/interface/spinner"
 import AnimeData from "@/models/AnimeData"

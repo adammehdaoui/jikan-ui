@@ -1,6 +1,6 @@
 "use client"
 
-import { fetchSchedules } from "@/api/jikan/schedules"
+import { fetchSchedules } from "@/app/api/jikan/schedules"
 import AnimeData from "@/models/AnimeData"
 import { SchedulesActions } from "@/models/SchedulesActions"
 import { clsx } from "clsx"
@@ -68,7 +68,7 @@ export default function TodaySchedules() {
                 <div
                   key={`loading-${index}`}
                   className={clsx(
-                    "rounded-full bg-heaven-white h-4 mt-5 animate-pulse",
+                    "rounded-full bg-heaven-white h-4 mt-6 blur-2xl animate-pulse",
                     index % 2 == 0 ? "w-1/2" : "w-2/3",
                   )}
                 ></div>

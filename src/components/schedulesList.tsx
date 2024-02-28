@@ -1,6 +1,6 @@
 "use client"
 
-import { fetchSchedules } from "@/api/jikan/schedules"
+import { fetchSchedules } from "@/app/api/jikan/schedules"
 import AnimeCard from "@/components/animeCard"
 import AnimeData from "@/models/AnimeData"
 import { useCallback, useEffect, useMemo, useState } from "react"
