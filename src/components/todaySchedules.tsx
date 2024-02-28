@@ -56,11 +56,11 @@ export default function TodaySchedules() {
   }, [fetchData])
 
   return (
-    <div className="bg-heaven-green text-heaven-white mt-10 rounded-2xl w-full h-full pb-5 max-w-4xl lg:h-card-height lg:ml-5 lg:mt-0 lg:pb-0">
+    <div className="bg-heaven-green text-heaven-white mt-10 rounded-2xl w-card-width h-full pb-5 max-w-4xl lg:h-card-height lg:w-full lg:ml-5 lg:mt-0 lg:pb-0">
       <div className="flex justify-center">
         <h2 className={`mt-6 text-xl ${unbounded.className}`}>TODAY</h2>
       </div>
-      <div className="mt-8 w-5/6 mx-auto">
+      <div className="mt-6 w-5/6 mx-auto">
         {schedulesState.loading
           ? new Array(elements)
               .fill(0)
