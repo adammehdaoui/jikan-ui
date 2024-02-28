@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "test": "vitest",
-    "build": "next build",
+    "build": "npx prisma db push && npx prisma generate && next build",
     "generate": "prisma generate",
     "migrate": "prisma migrate",
     "start": "next start",
