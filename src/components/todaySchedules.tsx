@@ -56,7 +56,7 @@ export default function TodaySchedules() {
   }, [fetchData])
 
   return (
-    <div className="bg-heaven-green text-heaven-white mt-10 rounded-2xl w-card-width h-full pb-5 max-w-4xl lg:h-card-height lg:w-full lg:ml-5 lg:mt-0 lg:pb-0">
+    <div className="bg-heaven-green text-heaven-white mt-10 rounded-2xl w-full h-full pb-5 max-w-4xl lg:h-card-height lg:ml-5 lg:mt-0 lg:pb-0">
       <div className="flex justify-center">
         <h2 className={`mt-6 text-xl ${unbounded.className}`}>TODAY</h2>
       </div>
@@ -68,7 +68,7 @@ export default function TodaySchedules() {
                 <div
                   key={`loading-${index}`}
                   className={clsx(
-                    "rounded-full bg-heaven-white h-4 mt-5 animate-pulse blur-xl",
+                    "rounded-full bg-heaven-white h-4 mt-6 blur-2xl animate-pulse",
                     index % 2 == 0 ? "w-1/2" : "w-2/3",
                   )}
                 ></div>
@@ -76,7 +76,7 @@ export default function TodaySchedules() {
           : schedulesState.data.map((item, index) => (
               <div key={`${item.title}—${index}`} className="mt-3">
                 <span className={unbounded.className}>{item.title}</span>
-                <span className={unbounded.className}>
+                <span className={`ml-2 ${unbounded.className}`}>
                   {item.broadcast.string}
                 </span>
               </div>
