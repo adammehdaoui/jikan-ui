@@ -3,6 +3,7 @@
 import Arrow from "@/components/interface/arrow"
 import MenuItem from "@/components/interface/menuItem"
 import Brand from "@/components/layout/brand"
+import { useSession } from "@/contexts/sessionContext"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -11,6 +12,13 @@ export default function Header({
 }: {
   changeVisible: () => void
 }) {
+  const { session } = useSession()
+
+  const pfp =
+    session && session.user && session.user.image != undefined
+      ? session.user.image
+      : "/assets/pfps/luffyGear5.png"
+
   const handleFocus = () => {
     changeVisible()
   }
@@ -36,7 +44,7 @@ export default function Header({
             className="w-6 mr-4"
           />
           <Image
-            src={"/assets/pfps/luffyGear5.png"}
+            src={pfp}
             width={500}
             height={500}
             alt="connected user"
