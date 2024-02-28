@@ -7,7 +7,7 @@ export default function LoginButton() {
     <button
       className="mt-4 p-3 bg-heaven-blue text-heaven-white rounded-xl text-lg"
       onClick={async () => {
-        await signIn("github", { callbackUrl: "/dashboard" })
+        await signIn("github")
       }}
     >
       Log in
