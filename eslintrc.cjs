@@ -74,4 +74,13 @@ module.exports = {
     "react/prop-types": "off",
   },
   settings: { react: { version: "detect" } },
+  overrides: [
+    {
+      files: ["src/lib/prisma.ts"],
+      rules: {
+        "no-unused-vars": ["error", { varsIgnorePattern: "prisma" }],
+        curly: "off",
+      },
+    },
+  ],
 }

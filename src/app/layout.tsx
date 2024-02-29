@@ -1,6 +1,6 @@
-import { authConfig } from "@/app/api/auth/[...nextauth]/route"
 import "@/app/globals.css"
 import MainWrapper from "@/components/layout/mainWrapper"
+import { authConfig } from "@/config/authConfig"
 import { SessionProvider } from "@/contexts/sessionContext"
 import { Metadata } from "next"
 import { getServerSession } from "next-auth"

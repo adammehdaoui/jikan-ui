@@ -60,7 +60,7 @@ export default function TodaySchedules() {
       <div className="flex justify-center">
         <h2 className={`mt-6 text-xl ${unbounded.className}`}>TODAY</h2>
       </div>
-      <div className="mt-8 w-5/6 mx-auto">
+      <div className="mt-6 w-5/6 mx-auto">
         {schedulesState.loading
           ? new Array(elements)
               .fill(0)
