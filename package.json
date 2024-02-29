@@ -13,7 +13,6 @@
     "start": "next start",
     "lint": "eslint src/app/**/*.{ts,tsx}",
     "format": "prettier --write .",
-    "postinstall": "prisma generate"
   },
   "eslintConfig": {
     "extends": [
