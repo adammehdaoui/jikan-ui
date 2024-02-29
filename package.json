@@ -12,7 +12,7 @@
     "migrate": "prisma migrate",
     "start": "next start",
     "lint": "eslint src/app/**/*.{ts,tsx}",
-    "format": "prettier --write .",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
