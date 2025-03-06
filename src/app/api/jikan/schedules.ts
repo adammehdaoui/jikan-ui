@@ -10,6 +10,7 @@ export async function fetchSchedules(
       `https://api.jikan.moe/v4/schedules?filter=${today}&page=${page}&sfw=true${limit ? `&limit=${limit}` : ``}`,
       {
         method: "GET",
+        next: { revalidate: 3600 },
       },
     )
     const data = await response.json()
