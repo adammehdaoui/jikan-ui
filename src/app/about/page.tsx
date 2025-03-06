@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <div className="flex justify-center mt-36 sm:mt-24 pb-20 xl:pb-72 w-full">
-      <div className="text-center text-heaven-white w-5/6 p-6 rounded-xl bg-heaven-blue">
+    <div className="flex justify-center w-full">
+      <div className="text-center text-heaven-white w-5/6 px-6 pb-36 rounded-xl bg-heaven-blue">
         <h2 className="text-xl italic mb-4">About JikanUI</h2>
         <p className="sm:text-lg leading-relaxed">
           Welcome to JikanUI, your premier destination for delving into the rich

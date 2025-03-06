@@ -18,7 +18,7 @@ export default function MainWrapper({
     <>
       <div className={clsx(!visible && "blur")}>
         <Header changeVisible={changeVisible} />
-        <div>{children}</div>
+        <div className="min-h-screen pb-10">{children}</div>
         <Footer />
       </div>
       <LogModal visible={visible} />
